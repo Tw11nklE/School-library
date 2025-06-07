@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Biblioteka.RegistrationPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label HorizontalOptions="Center" TextColor="black" FontSize="25" Text="Регистрация"/>
+            <Frame Margin="10" CornerRadius="25" Padding="25" BorderColor="black" HasShadow="False" WidthRequest="250">
+                <StackLayout>
+                    <Label Text="Логин" TextColor="black"/>
+                    <Entry x:Name="reg_user_login" Placeholder="User"/>
+                    <Label Text="Пароль" TextColor="black"/>
+                    <Entry x:Name="reg_user_password" Placeholder="Password" IsPassword="True"/>
+                    <Label Text="Пароль администратора" TextColor="black"/>
+                    <Entry x:Name="user_role" Placeholder="Не обязательно"/>
+                </StackLayout>
+            </Frame>
+            <Button Clicked="Reg_user_btn" Margin="35, 5" CornerRadius="25" TextColor="black" Text="Зарегистрироваться"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

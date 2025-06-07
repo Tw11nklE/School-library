@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Biblioteka"
+             Title="FlyoutMenu"
+             x:Class="Biblioteka.FlyoutMenuPage">
+    <StackLayout>
+        <ListView x:Name="listview" x:FieldModifier="public">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type local:FlyoutItemPage}">
+                    <local:FlyoutItemPage Title="Книги" IconSource="https://cdn.icon-icons.com/icons2/37/PNG/512/book_3725.png" TargetPage="{x:Type local:Books}"/>
+                    <local:FlyoutItemPage Title="Мероприятия" IconSource="https://cdn.icon-icons.com/icons2/602/PNG/512/News_icon-icons.com_55857.png" TargetPage="{x:Type local:InformPage}"/>
+                    <local:FlyoutItemPage Title="Полезные ссылки" IconSource="https://cdn.icon-icons.com/icons2/621/PNG/512/link-symbol-of-two-chains-links-linked_icon-icons.com_56928.png" TargetPage="{x:Type local:LinksPage}"/>
+                    <local:FlyoutItemPage Title="Выход" IconSource="https://cdn.icon-icons.com/icons2/494/PNG/512/exit_icon-icons.com_48304.png" TargetPage="{x:Type local:MainPage}"/>
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="33"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Margin="5" Source="{Binding IconSource}"/>
+                            <Label TextColor="black" VerticalOptions="Center" Grid.Column="1" Text="{Binding Title}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Панель администратора"
+             x:Class="Biblioteka.AdminPage">
+
+    <ScrollView>
+        <StackLayout>
+            <Button CornerRadius="25" Margin="5, 5" Clicked="Posmotret" Text="Перейти в приложение"/>
+            <BoxView Color="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+            <Label Text="Добавление книги" TextColor="Black" HorizontalOptions="Center" FontSize="20"/>
+            <Entry x:Name="BookImageUrl" Placeholder="Введите URL картинки" Margin="10,0"/>
+            <Entry x:Name="BookTitle" Placeholder="Введите название книги" Margin="10,0"/>
+            <Entry x:Name="BookAuthor" Placeholder="Введите автора книги" Margin="10,0"/>
+            <Editor x:Name="BookDescription" Placeholder="Введите описание книги" HeightRequest="100" Margin="10,0"/>
+            <Button CornerRadius="25" Margin="5, 5" Text="Добавить книгу" Clicked="AddBookItem_Clicked"/>
+            <BoxView Color="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+            <Label Text="Удаление книги" TextColor="Black" HorizontalOptions="Center" FontSize="20"/>
+            <Label Text="Список книг" TextColor="black" FontSize="Medium" Margin="15, 0"/>
+            <ListView x:Name="BooksListView" ItemTapped="BooksListView_ItemTapped" HeightRequest="250" BackgroundColor="#dfd8d8">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Title}" Detail="{Binding Author}" TextColor="black" DetailColor="black"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <BoxView Color="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+            <Label Text="Добавление мероприятия" TextColor="Black" HorizontalOptions="Center" FontSize="20"/>
+            <Entry x:Name="EventTitle" Placeholder="Название мероприятия" Margin="10,0"/>
+            <Entry x:Name="EventDate" Placeholder="Дата проведения" Margin="10,0"/>
+            <Editor x:Name="EventDescription" Placeholder="Описание мероприятия" HeightRequest="100" Margin="10,0"/>
+            <Button CornerRadius="25" Margin="5, 5" Clicked="AddEventItem_Clicked" Text="Добавить мероприятие"/>
+            <BoxView Color="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+            <Label TextColor="Black" HorizontalOptions="Center" FontSize="20" Text="Удаление мероприятия"/>
+            <Label Text="Список мероприятий" TextColor="black" FontSize="Medium" Margin="15, 0"/>
+            <ListView x:Name="EventListView" ItemTapped="EventListView_ItemTapped" HeightRequest="250" BackgroundColor="#dfd8d8">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Title}" Detail="{Binding Date}" TextColor="black" DetailColor="black"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <BoxView Color="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+            <Label Text="Добавление ссылки" TextColor="Black" HorizontalOptions="Center" FontSize="20"/>
+            <Entry x:Name="LinkDescription" Placeholder="Описание ссылки" Margin="10,0"/>
+            <Entry x:Name="LinkLink" Placeholder="Ссылка" Margin="10,0"/>
+            <Button CornerRadius="25" Margin="5, 5" Clicked="AddLinkItem_Clicked" Text="Добавить ссылку"/>
+            <BoxView Color="Black" HeightRequest="1" HorizontalOptions="FillAndExpand" />
+            <Label Text="Удаление ссылки" TextColor="Black" HorizontalOptions="Center" FontSize="20"/>
+            <Label Text="Список ссылок" TextColor="black" FontSize="Medium" Margin="15, 0"/>
+            <ListView x:Name="LinkListView" ItemTapped="LinkListView_ItemTapped" HeightRequest="250" BackgroundColor="#dfd8d8">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Description}" Detail="{Binding Link}" TextColor="black" DetailColor="black"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

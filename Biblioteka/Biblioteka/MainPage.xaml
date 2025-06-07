@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Biblioteka.MainPage">
+
+    <Grid>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label HorizontalOptions="Center" FontSize="32" TextColor="Black" Text="Добро пожаловать"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Image WidthRequest="25" HeightRequest="25" Source="https://cdn.icon-icons.com/icons2/37/PNG/512/books_3025.png"/>
+                <Label FontSize="22" TextColor="Black" Text="Школьная библиотека"/>
+            </StackLayout>
+            <Frame Margin="10" CornerRadius="25" Padding="25" BorderColor="black" HasShadow="False" WidthRequest="250">
+                <StackLayout>
+                    <Entry x:Name="user_login" Placeholder="Логин"/>
+                    <Entry x:Name="user_password" Placeholder="Пароль" IsPassword="True"/>
+                </StackLayout>
+            </Frame>
+            <Button Clicked="Vhod_btn" Margin="35, 5" CornerRadius="25" TextColor="black" Text="Войти"/>
+        </StackLayout>
+        <Button Clicked="Register_btn" BackgroundColor="#f9f9f9" HorizontalOptions="FillAndExpand" VerticalOptions="End" Margin="0, 10" Text="Регистрация"/>
+    </Grid>
+</ContentPage>
